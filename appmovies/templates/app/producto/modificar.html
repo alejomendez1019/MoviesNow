@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+
+
+{% block contenido %}
+
+{% load crispy_forms_tags %}
+
+
+
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+
+        <form action="" class="form-register" method="post">
+            <h2>Editar Pelicula</h2>
+            <hr>
+
+        {% csrf_token %}
+
+        {{ form | crispy }}
+
+            <hr>
+            <div class="d-flex justify-content-en">
+                <input class="boto" type="reset" value="Cancelar">
+                &nbsp
+                <input class="botons" type="submit" value="Editar">
+            </div>
+            {{ mensaje }}
+        </form>
+
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

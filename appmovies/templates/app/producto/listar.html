@@ -1,0 +1,75 @@
+{% extends 'app/base.html' %}
+
+{% block js %}
+<script>
+    function eliminarPelicula(id) {
+        Swal.fire({
+        "title":"¿Estas seguro?",
+        "text":"Esta accion no se puede deshacer",
+        "icon":"question",
+        "showCancelButton":true,
+        "cancelButtonText":"No, Cancelar",
+        "confirmButtonText":"Si, Eliminar",
+        "reverseButtons":true,
+        "confirmButtonColor":"#dc3545"
+        })
+        .then(function(result) {
+            if(result.isConfirmed) {
+                window.location.href = "/eliminar-pelicula/"+id+"/"
+            }
+        })
+    }
+</script>
+
+{% endblock %}
+
+{% block contenido %}
+{% load humanize %}
+
+
+<form action="" class="oo" method="post">   
+    <h2>Listado de Peliculas</h2>
+    <hr> 
+    <table class="table table-striped table-hover table-responsive-sm">
+
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Genero</th>
+            <th>Opciones</th>
+        </tr>
+
+    {% for p in entity %}
+
+        <tr>
+            <td>{{ p.nombre | title }}</td>
+            <td>${{ p.precio | intcomma }}</td>
+            <td>{{ p.genero | title }}</td>
+
+            <td>
+                {% if perms.appmovies.change_pelicula %}
+                <a href="{%  url 'modificar_pelicula' p.id %}" class="boto">Modificar</a>
+                {% endif %}
+                {% if perms.appmovies.delete_pelicula %}
+                <a href="#" onclick="eliminarPelicula({{ p.id }})" class="botons">Eliminar</a>
+                {% endif %}
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+        <hr>
+    <div>
+        {% include 'app/paginator.html' %}
+    </div>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

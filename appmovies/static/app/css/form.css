@@ -1,0 +1,128 @@
+.oo {
+    width: 900px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
+.oa {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #c90404;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+}
+
+.controls {
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #c90404;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: white;
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.oo th {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #f8f6f8;
+}
+
+.oo td {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: #f8f6f8;
+}
+
+.form-register a {
+    color: white;
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-register .botons {
+    width: 50%;
+    background: #be0404;
+    border: none;
+    padding: 5px;
+    color: white;
+    margin: 7px 0;
+    font-size: 16px;
+}
+  
+.form-register .boto {
+    width: 50%;
+    background: #09baf0;
+    border: none;
+    padding: 5px;
+    color: white;
+    margin: 7px 0;
+    font-size: 16px;
+}
+
+.oo .botons {
+    width: 50%;
+    background: #be0404;
+    border: none;
+    padding: 5px;
+    color: white;
+    margin: 7px 0;
+    font-size: 16px;
+    text-decoration: none;
+}
+  
+.oo .boto {
+    width: 50%;
+    background: #09baf0;
+    border: none;
+    padding: 5px;
+    color: white;
+    margin: 7px 0;
+    font-size: 16px;
+    text-decoration: none;
+}

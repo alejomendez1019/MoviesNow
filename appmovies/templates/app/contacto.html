@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app/css/form.css' %}">
+{% endblock %}
+
+{% block contenido %}
+
+{% load crispy_forms_tags %}
+
+<div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+        <form action="" class="form-register" method="post">
+            <h2>Contactanos!</h2>
+            <hr>
+
+            {% csrf_token %}
+
+            {{ form | crispy }}
+            <hr>
+            <div class="d-flex justify-content-end">
+                <input class="boto" type="submit" value="Cancelar">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="botons" id="btnEnviar" type="submit">Enviar</button>
+            </div>
+            {{ mensaje }}
+        </form>
+        <br>
+    </div> 
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('.slider').bxSlider({
+          mode: 'fade',//horizontal, vertical, fade
+          auto: true,
+          pause: 2000
+      });
+    });
+</script>
+
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+{% endblock %}
+
+{% block contenido %}
+<content>
+<center>
+     <div class="content-all">
+        <div class="content-carrousel">
+            <figure><img src="{% static 'app/img/maxresdefault.jpg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/artemis.jpg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/Bloodshot.jpeg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/boy.jpg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/bob.png' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/hoy-si.jpg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/croods.jpg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/monster_hunter.jpeg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/mortal.jpg' %}" alt=""></figure>
+            <figure><img src="{% static 'app/img/your.jpg' %}" alt=""></figure>
+        </div>
+    </div>
+</center>
+</content>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% load humanize %}
+
+<hr>
+    <main>
+        <section class="portafolio">
+            <div class="contenedor">
+                <h2 class="titulo">Peliculas</h2>
+                <div class="galeria-port">
+                    {% for p in peliculas %}
+                        <div class="imagen-port">
+                            {% if p.imagen %}
+                            <img src="{{ p.imagen.url }}" alt="imagen producto">
+                            {% endif %}
+                            <div class="hover-galeria">
+                                <img src="{{ p.imagen.url }}" alt="imagen producto">
+                                <h5>{{ p.genero | capfirst }}</h5>
+                                <h2>{{ p.nombre | title }}</h2>
+                                <h3>${{ p.precio | intcomma }}</h3>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section> 
+    
+    </main>
+
+<br>
+<br>
+<br>
+
+
+{% endblock %}
