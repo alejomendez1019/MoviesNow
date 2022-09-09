@@ -61,3 +61,6 @@ jobs:
           app-name: 'test-rest'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7BAA2BFC42454110AB0B6923674F422B }}
+
+      - name : 'RUN SERVER'
+        run: python manage.py runserver
