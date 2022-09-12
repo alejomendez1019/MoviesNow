@@ -1,4 +1,4 @@
-django
+django==3.9
 pillow
 django-admin-interface
 django-crispy-forms
